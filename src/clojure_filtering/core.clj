@@ -10,6 +10,7 @@
   (println "Shoes")
   (println "Jewelry")
   (println "Toiletries")
+  (println "Food")
 
   (let [purchases (slurp "purchases.csv") ;take it all in an store it in purchases
         purchases (str/split-lines purchases); makes it into each line containing vector
