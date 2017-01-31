@@ -27,4 +27,4 @@
                             (= (get line "category") category))
                           purchases)
         file-json (json/write-str purchases)]
-    (spit (str "filtered_list_" category ".json") file-json) category))
+    (spit (str "filtered_purchases_" category ".json") file-json) category))
