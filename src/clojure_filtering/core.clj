@@ -19,12 +19,12 @@
                        purchases)
         header (first purchases) ;separates the header from the rest of the line
         purchases (rest purchases) ; redefines the purchases
-        purchases (map (fn [line]
+        purchases (map (fn [line]  ; makes a hashmap with category and item
                          (zipmap header line))
                        purchases)
-        category (read-line)
+        category (read-line) ; filter by category
         purchases (filter (fn [line]
                             (= (get line "category") category))
                           purchases)
         file-json (json/write-str purchases)]
-    (spit (str "filtered_purchases_" category ".json") file-json) category))
+    (spit (str "filtered_purchases_" category ".json") file-json) category)) ; writes the file to json
